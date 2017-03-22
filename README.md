@@ -38,3 +38,22 @@ function fn(){
 var timer=setTimeout(fn,1000);
 console.log(timer);
 ```
+## 4.常见面试题
+```
+for(var i=1;i<=5;i++){
+	setTimeout(function timer(){
+		console.log(i);
+	},i*1000);
+}
+```
+* 利用闭包，修改下面的代码，让循环输出的结果依次为1， 2， 3， 4， 5<br/>
+```
+for (var i=1; i<=5; i++) { 
+
+    (function(i) {
+        setTimeout( function timer() {
+            console.log(i);
+        }, i*1000 );
+    })(i)
+}
+```
